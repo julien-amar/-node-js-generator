@@ -1,2 +1,2 @@
-# -node-js-generator
-Yeoman generator for  node-js-template project.
+# node-js-generator
+Yeoman generator for node-js-template project.
