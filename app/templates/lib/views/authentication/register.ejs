@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>EComm - Création d'un compte</title>
+
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendors/admin-lte/dist/css/AdminLTE.css" />
+  </head>
+  <body class="login-page">
+    <div class="login-box">
+      <div class="login-logo">
+        <a href="/"><b>E</b>Comm</a>
+      </div>
+
+      <div class="login-box-body">
+        <p class="login-box-msg">Créer un nouveau compte</p>
+      
+        <form action="register" method="post">
+          <div class="form-group has-feedback">
+            <input class="form-control" placeholder="Nom utilisateur" type="text" name="username" autofocus="autofocus" />
+            <span class="glyphicon glyphicon-envelope form-control-feedback" />
+          </div>
+      
+          <div class="form-group has-feedback">
+            <input class="form-control" placeholder="Mot de passe" type="password" name="password" />
+            <span class="glyphicon glyphicon-lock form-control-feedback" />
+          </div>
+      
+          <button class="btn btn-primary btn-block btn-flat" type="submit">Créer un compte</button>
+        </form>
+      
+        <a class="text-center" href="login">Se connecter</a>
+      </div>
+    </div>
+  </body>
+</html>

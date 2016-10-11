@@ -1,0 +1,17 @@
+{
+  "name": "generator-node-js-app",
+  "version": "0.1.0",
+  "description": "",
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "lodash": "^4.16.2",
+    "yeoman-generator": "^0.24.1",
+    "yosay": "^1.2.0"
+  }
+}
