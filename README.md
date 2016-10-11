@@ -15,5 +15,5 @@ npm link
 ```
 npm install -g yo
 
-yo node-js-generator
+yo ecomm-app
 ```
