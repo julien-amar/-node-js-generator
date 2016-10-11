@@ -15,7 +15,7 @@ module.exports = generators.Base.extend({
     },
 
     prompting: function() {
-        this.log(yosay('Welcome to ' + chalk.blue('Tool WebAPI project template') + ' generator'))
+        this.log(yosay('Welcome to ' + chalk.blue('E-Commerce project template') + ' generator'))
 
         var tryToReloadPromptFromConfig = function(prompt) {
             var configValue = this.config.get(prompt.name)
