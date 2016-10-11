@@ -28,27 +28,42 @@ module.exports = generators.Base.extend({
         }
 
         var prompts = _.map([
-            { type:'input', name: 'TOOLNAME', message: 'Tool name (eg: xxx)', default: this.appname},
-            { type:'input', name: 'PORT', message: 'Port (eg: 8080)', default: 8080}
+            { type: 'input', name: 'PROJECT_NAME', message: 'Project name', default: 'e-comm' },
+
+            { type: 'input', name: 'TOOL_NAME', message: 'Tool name', default: 'E-Comm' },
+            { type: 'input', name: 'TOOL_PORT', message: 'Port', default: 5000 },
+
+            { type: 'input', name: 'DB_HOST', message: 'Database host', default: 'localhost' },
+            { type: 'input', name: 'DB_NAME', message: 'Database name', default: 'ecomm'}
         ], tryToReloadPromptFromConfig.bind(this))
 
         return this.prompt(prompts)
             .then(function(answers) {
-                this.TOOLNAME = answers.TOOLNAME
-                this.PORT = answers.PORT
+                this.PROJECT_NAME = answers.PROJECT_NAME
+
+                this.TOOL_NAME = answers.TOOL_NAME
+                this.TOOL_PORT = answers.TOOL_PORT
+
+                this.DB_HOST = answers.DB_HOST
+                this.DB_NAME = answers.DB_NAME
             }.bind(this))
     },
 
     configuring: function() {
-        this.config.set('TOOLNAME', this.TOOLNAME)
-        this.config.set('PORT', this.PORT)
+        this.config.set('PROJECT_NAME', this.PROJECT_NAME)
+
+        this.config.set('TOOL_NAME', this.TOOL_NAME)
+        this.config.set('TOOL_PORT', this.TOOL_PORT)
+
+        this.config.set('DB_HOST', this.DB_HOST)
+        this.config.set('DB_NAME', this.DB_NAME)
 
         this.config.save()
     },
 
     writing: {
         init: function() {
-            this.log('Initializing project: ' + this.TOOLNAME);
+            this.log('Initializing project: ' + this.TOOL_NAME);
         },
 
         appStaticFiles: function() {
@@ -74,8 +89,16 @@ module.exports = generators.Base.extend({
                 "!" + this.templatePath('**/swagger/**/*')],
                 this.destinationPath(),
                 {
-                    TOOLNAME: this.TOOLNAME,
-                    PORT: this.PORT
+                    PROJECT_NAME: this.PROJECT_NAME,
+
+                    TOOL_NAME: this.TOOL_NAME,
+                    TOOL_PORT: this.TOOL_PORT,
+
+                    DB_HOST: this.DB_HOST,
+                    DB_NAME: this.DB_NAME,
+
+                    SECRET_CRYPTO: Math.random().toString(36).substring(7),
+                    SECRET_JWT: Math.random().toString(36).substring(7)
                 }
             )
         }

@@ -1,20 +1,20 @@
 {
     "server": {
         "host": "localhost",
-        "port": 5050
+        "port": <%= TOOL_PORT %>
     },
 
     "mongo": {
-        "connection_string": "mongodb://localhost/ecomm"
+        "connection_string": "mongodb://<%= DB_HOST %>/<%= DB_NAME %>"
     },
 
     "crypto": {
         "authentication": {
-            "secret": "encryption-key"
+            "secret": "<%= SECRET_CRYPTO %>"
         },
         "jwt": {
-            "cookie": "user",
-            "secret": "secret"
+            "cookie": "ecomm-authentication",
+            "secret": "<%= SECRET_JWT %>"
         }
     }
 }

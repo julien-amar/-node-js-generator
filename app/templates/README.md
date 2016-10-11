@@ -1,13 +1,5 @@
-# node-js-template
-Node JS project template providing an Angular application (serving data through a REST API)
-
-## Installation
-
-```
-git clone https://github.com/julien-amar/node-js-template.git
-cd .\node-js-template\
-npm install
-```
+# <%= PROJECT_NAME %>
+Node JS project providing an E-Commerce Angular application (serving data through a REST API)
 
 ## Front end
 
