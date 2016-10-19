@@ -2,10 +2,8 @@
 Yeoman generator for Node JS project template providing an E-Commerce Angular application (serving data through a REST API).
   
 ![Authentication](https://github.com/julien-amar/node-js-generator/blob/master/docs/Authentication.png?raw=true)  
-*Authentication*  
   
 ![Application](https://github.com/julien-amar/node-js-generator/blob/master/docs/Application.png?raw=true)  
-*Category & Product*  
   
 ## Installation
 
